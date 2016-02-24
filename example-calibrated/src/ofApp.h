@@ -15,6 +15,8 @@ public:
 	void keyPressed(int key);
     void imageNoise();
     
+    ofImage xmas;
+    
     ofImage noise;
     int whiteBlack;
     int lineY;
@@ -29,5 +31,6 @@ public:
     ofPixels pixelsRGB;
     
     bool swapBackground;
+    bool bigBrother;
     
 };

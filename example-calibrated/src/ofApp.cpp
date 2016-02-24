@@ -30,6 +30,10 @@ void ofApp::setup() {
     whiteBlack = 255;
     ofSetColor(255);
     swapBackground = false;
+    bigBrother = true;
+    
+    //xmas
+//    xmas.load("xmasPatternFrick.jpg");
 }
 
 void ofApp::updatePhysicalMesh() {
@@ -109,7 +113,7 @@ void ofApp::update() {
             }
         }
     }
-    noise.update();;
+    noise.update();
     
 //    // swap time and reset time
 //    if (ofGetMinutes() <= 5){
@@ -167,12 +171,21 @@ void ofApp::draw() {
         //    ss << " App FPS: " << ofGetFrameRate() << std::endl;
         //    ss << " Cam FPS: " << ps3cam.getGrabber<ofxPS3EyeGrabber>()->getFPS()  << std::endl;
         //    ss << "Real FPS: " << ps3cam.getGrabber<ofxPS3EyeGrabber>()->getActualFPS() << std::endl;
+//        ss << "HAPPY HOLIDAYS!" << std::endl;
         ss << "#ofNoiseFace" << std::endl;
         ss << "#openFrameworks" << std::endl;
-        ss << "@mosspassion" << std::endl;
-        ss << "twitch.tv/mosspassion";
-        
+        ss << "@mosspassion"; // << std::endl;
+//        ss << "twitch.tv/mosspassion";
+//        
         ofDrawBitmapStringHighlight(ss.str(), ofPoint(10, 20));
+        
+        if (bigBrother == true){
+        std::stringstream sss;
+        sss << "I'm Not Your Big Brother";
+        ofDrawBitmapStringHighlight(sss.str(), ofPoint((ofGetWidth()*0.5-100),(ofGetHeight()*0.5)));
+        }
+        else{}
+//
     }
     else if (swapBackground == true){
         noise.draw(0, 0);
@@ -182,12 +195,21 @@ void ofApp::draw() {
         //    ss << " App FPS: " << ofGetFrameRate() << std::endl;
         //    ss << " Cam FPS: " << ps3cam.getGrabber<ofxPS3EyeGrabber>()->getFPS()  << std::endl;
         //    ss << "Real FPS: " << ps3cam.getGrabber<ofxPS3EyeGrabber>()->getActualFPS() << std::endl;
+//        ss << "HAPPY HOLIDAYS!" << std::endl;
         ss << "#ofNoiseFace" << std::endl;
         ss << "#openFrameworks" << std::endl;
-        ss << "@mosspassion" << std::endl;
-        ss << "twitch.tv/mosspassion";
+        ss << "@mosspassion"; // << std::endl;
+//        ss << "twitch.tv/mosspassion";
         
         ofDrawBitmapStringHighlight(ss.str(), ofPoint(10, 20));
+
+        if (bigBrother == true){
+        std::stringstream sss;
+        sss << "I'm Not Your Big Brother";
+        ofDrawBitmapStringHighlight(sss.str(), ofPoint((ofGetWidth()*0.5-100),(ofGetHeight()*0.5)));
+        }
+        else{}
+        
     }
     
     // tracker
@@ -205,7 +227,9 @@ void ofApp::draw() {
             ofEnableLighting();
             light.enable();
             noise.getTexture().bind();
+//            xmas.getTexture().bind();
             physicalMesh.drawFaces();
+//            xmas.getTexture().unbind();
             noise.getTexture().unbind();
             ofDisableLighting();
         }
@@ -227,5 +251,8 @@ void ofApp::keyPressed(int key) {
     }
     if (key == 's'){
         swapBackground = !swapBackground;
+    }
+    if (key == 'b'){
+        bigBrother = !bigBrother;
     }
 }
