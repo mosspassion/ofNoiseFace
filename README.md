@@ -1,6 +1,7 @@
-
+![ofNoiseFace installtion highlights on vimeo.](https://vimeo.com/149104125)
 
 Very inspired by Gustavo Torres KIDMOGRAPH ["Mr. No ID."](http://kidmograph.tumblr.com/post/65849295688/mr-no-id)
+![Mr. No ID](http://78.media.tumblr.com/16bc2182cc361e3b4d519f54c30fd164/tumblr_mvo1pyoQ3h1rsdpaso1_500.gif)
 
 Using OpenFrameworks C++ library, Kyle McDonald's [ofxFaceTracker](https://github.com/kylemcdonald/ofxFaceTracker), and Chris Baker's [ofxPS3EyeGrabber](https://github.com/blazm/ofxPS3EyeGrabber), I set up a streaming video camera in the storefront windows of my home. The video camera tracks a face then replaces the face with a digital TV noise-esque mask. It also reveals the faces and spirits in the walls of our buildings, in the wheels of our vehicles, and in the ether of the air.
 
